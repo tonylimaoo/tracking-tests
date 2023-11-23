@@ -1,0 +1,22 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "price": 10,
+            "item_name": "meia",
+            "size": ["unico"]
+        },
+        {
+            "id": 2,
+            "price": 70,
+            "item_name": "camiseta-oversized",
+            "size": ["pp", "p", "m", "g", "gg"]
+        },
+        {
+            "id": 3,
+            "price": 150,
+            "item_name": "calca-cargo",
+            "size": ["pp", "p", "m", "g", "gg"]
+        }
+    ]
+}
