@@ -13,7 +13,7 @@ const Cart = () => {
 
     useEffect(() => {
         fireEvent("view_cart", productsPayload(id))
-    }, [id])
+    }, [id !== ""])
 
     const handleBeginCheckout = () => {
         fireEvent("begin_checkout", productsPayload(id))

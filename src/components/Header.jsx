@@ -1,19 +1,31 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Header.css"
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom';
 import { useGtag } from '../hooks/useGtag';
+import { useCounterContext } from '../context/CounterContext';
 
 
 
 const Header = () => {
 
     const location = useLocation();
-    const { fireEvent } = useGtag();
+    const { fireEvent, gtagSet } = useGtag();
+    const { counter, setCounter } = useCounterContext();
 
 
     useEffect(() => {
         fireEvent("page_view")
+    }, [location])
+
+    useEffect(() => {
+
+        if (counter > 0) {
+            gtagSet({ page_referrer: '' })
+        }
+
+        setCounter(counter + 1);
+
     }, [location])
 
 

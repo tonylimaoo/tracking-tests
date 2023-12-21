@@ -3,7 +3,9 @@ export const useGtag = () => {
         gtag('event', eventName, payload)
     }   
 
-    return {
-        fireEvent
+    const gtagSet = (object) => {
+        gtag('set', object)
     }
+
+    return { fireEvent, gtagSet }
 }

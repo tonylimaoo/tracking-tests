@@ -10,7 +10,7 @@ const Checkout = () => {
         setId(localStorage.getItem("productId"));
     }, [])
     
-    console.log(id)
+    console.log(id);
 
     const handleAddShippingInfo = () => {
         const agregatedObj = productsPayload(id);

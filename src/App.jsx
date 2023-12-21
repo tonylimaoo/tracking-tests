@@ -3,36 +3,45 @@ import './App.css'
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Home from './pages/Home';
 import Header from './components/Header';
-import Banana from './pages/Banana';
 import Footer from './components/Footer';
 import EcommerceHome from './pages/Ecommerce/EcommerceHome';
 import Product from './pages/Ecommerce/Product/Product';
 import Cart from './pages/Ecommerce/Cart/Cart';
 import Checkout from './pages/Ecommerce/Checkout/Checkout';
+import ProductsList from './pages/Ecommerce/ProductsList/ProductsList';
+import { useGtag } from './hooks/useGtag';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const { fireEvent } = useGtag();
 
   useEffect(() => {
     console.log("renderizou");
+
     gtag('js', new Date());
     gtag('config', 'G-X9RTCMVBM8', {
-      send_page_view: false
+      send_page_view: false,
+      user_properties: {
+        user_id: 3102
+      }
     });
-}, [])
+
+    fireEvent("page_view")
+  }, [])
 
   return (
     <>
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/ecommerce/home' element={<EcommerceHome />} />
-          <Route path='/ecommerce/product/:id' element={<Product />} />
-          <Route path='/ecommerce/cart' element={<Cart />} />
-          <Route path='/ecommerce/checkout' element={<Checkout />} />
-        </Routes>
-        <Footer />
+          <Header />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/ecommerce/home' element={<EcommerceHome />} />
+            <Route path='/ecommerce/product/:id' element={<Product />} />
+            <Route path='/ecommerce/list/:id' element={<ProductsList />} />
+            <Route path='/ecommerce/cart' element={<Cart />} />
+            <Route path='/ecommerce/checkout' element={<Checkout />} />
+          </Routes>
+          <Footer />
       </BrowserRouter>
     </>
   )

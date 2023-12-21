@@ -75,6 +75,7 @@ button:hover {
   background-color: rgb(130, 130, 130);
   border-radius: .6em;
   outline: none;
+  color: white;
 }
 
 .button-link:hover {
