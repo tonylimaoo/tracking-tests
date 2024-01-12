@@ -21,7 +21,10 @@ export const productsPayload = (id) => {
                 item_variant: id == 1 ? "green" : "red",
                 location_id: id == 1 ? "ChIJIQBpAG2ahYAR_6128GcTUEo" : "CGGdsSGkm12stts__sjDDSsaSdahHHS",
                 price: id == 1 ? 9.99 : 19.99,
-                quantity: 1
+                quantity: 1,
+                item_custom_dimension: "teste 1",
+                item_custom_dimension2: "teste 2",
+                item_custom_dimension3: "teste 3"
             }
         ]
     }
@@ -56,7 +59,10 @@ export const promotionsPayload = (id) => {
                 item_variant: "green",
                 location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
                 price: 9.99,
-                quantity: 1
+                quantity: 1,
+                item_custom_dimension: "item_custom_dimension",
+                item_custom_dimension2: "item_custom_dimension2",
+                item_custom_dimension3: "item_custom_dimension3"
             },
             {
                 item_id: 2,
@@ -75,7 +81,10 @@ export const promotionsPayload = (id) => {
                 item_variant: "red",
                 location_id: "CGGdsSGkm12stts__sjDDSsaSdahHHS",
                 price: 19.99,
-                quantity: 1
+                quantity: 1,
+                item_custom_dimension: "item_custom_dimension",
+                item_custom_dimension2: "item_custom_dimension2",
+                item_custom_dimension3: "item_custom_dimension3"
             }
         ]
     }

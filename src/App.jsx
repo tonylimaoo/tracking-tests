@@ -22,8 +22,8 @@ function App() {
     gtag('config', 'G-X9RTCMVBM8', {
       send_page_view: false,
       user_properties: {
-        user_id: 4100,
-        uid: 4100
+        user_id: 7001,
+        uid: 7001
       }
     });
 

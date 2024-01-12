@@ -12,22 +12,21 @@ const Header = () => {
     const location = useLocation();
     const { fireEvent, gtagSet } = useGtag();
     const { counter, setCounter } = useCounterContext();
-
-
+    
+    
     useEffect(() => {
-        fireEvent("page_view")
-    }, [location])
-
-    useEffect(() => {
-
+        
         if (counter > 0) {
             gtagSet({ page_referrer: '' })
         }
-
+        
         setCounter(counter + 1);
-
+        
     }, [location])
-
+    
+    useEffect(() => {
+        fireEvent("page_view")
+    }, [location])
 
     return (
         <header className='header'>
